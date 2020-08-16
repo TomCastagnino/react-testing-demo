@@ -38,4 +38,19 @@ describe('<Form interactions', () => {
         expect(wrapper.state('firstNumber')).toEqual('');
         expect(wrapper.state('secondNumber')).toEqual(70);
     });
+    it('should call the onClick function when the Add button is clicked', () => {
+        wrapper.setProps( {operator: '+', } );        
+        const mockedHandleClick = jest.fn();
+        //For some reason it does not workd for binded functions in <Form>.
+        wrapper.instance().handleAdd = mockedHandleClick;
+        wrapper.find('#formButtonAdd').props().onClick();
+        console.log()
+        expect(mockedHandleClick).toHaveBeenCalledTimes(1);
+    });
 });
+
+describe('<Form> lifecycle method invocations', () => {
+    it('should change the state when componentDidMount is called', () => {
+        expect(wrapper.state('componentState')).toEqual('mounted');
+    })
+})

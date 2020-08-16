@@ -12,7 +12,7 @@ class Form extends Component {
         this.handleFirstNumber = this.handleFirstNumber.bind(this);
         this.handleSecondNumber = this.handleSecondNumber.bind(this);
         this.displayResult = this.displayResult.bind(this);
-        this.handleAdd = this.handleAdd.bind(this);
+        // this.handleAdd = this.handleAdd.bind(this);
         this.handleSubstract = this.handleSubstract.bind(this);
     }
 
@@ -61,7 +61,7 @@ class Form extends Component {
                 </fieldset>
                 <div className='form-group'>
                     {operator === '+' &&
-                        <button id='formButtonAdd' className='btn' type='button' onClick={this.handleAdd}>
+                        <button id='formButtonAdd' className='btn' type='button' onClick={() => this.handleAdd()}>
                             Add
                         </button>
                     }
