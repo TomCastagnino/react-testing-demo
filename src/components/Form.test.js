@@ -9,6 +9,9 @@ beforeEach(() => {
 });
 
 describe('<Form> rendering', () => {
+    it('renders correctly', () => {
+        expect(wrapper).toMatchSnapshot();
+    });
     it('should render  one <form>', () => {
         expect(wrapper.find('form')).toHaveLength(1);
     });
@@ -52,5 +55,5 @@ describe('<Form interactions', () => {
 describe('<Form> lifecycle method invocations', () => {
     it('should change the state when componentDidMount is called', () => {
         expect(wrapper.state('componentState')).toEqual('mounted');
-    })
-})
+    });
+});
